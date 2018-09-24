@@ -7,24 +7,24 @@
 	* Các giao dịch được sinh ra trong mạng lưới.
 	* Miner là những người tạo ra sự thỏa thuận trong blockchain.
 	* Số cái (blockchain) là nơi chứa tất cả các giao dịch.
-	![Bitcoin Overview](/image/bitcoinOverview.png)
+	![Bitcoin Overview](image/bitcoinOverview.png)
 
 ## Giao dịch Bitcoin.
 * Một giao dịch Bitcoin nói đơn giản là sẽ cho mạng Bitcoin biết rằng chủ sở hữu của một số giá trị Bitcoin đã cho phép chuyển giao giá trị đó cho một chủ sở hữu khác. Chủ sở hữu mới hiện có thể chi tiêu Bitcoin này bằng cách tạo một giao dịch khác cho phép chuyển giao nó cho một chủ sở hữu khác.
 * Một giao dịch cũng chứa bằng chứng quyền sở hữu cho mỗi số bitcoin ( đầu vào ) có giá trị đang và đã được chi tiêu dưới dạng chữ ký số từ chủ sở hữu.
 	* Ví dụ về giao dịch Bitcoin biểu diễn dưới dạng sổ toán kép: 
-	![Transaction as double-entry bookkeeping](/image/double_entry.png)
+	![Transaction as double-entry bookkeeping](image/double_entry.png)
 
 	* Biểu diễn chúng dưới dang chuỗi giao dich: 
-	![Transaction Chains](/image/transactionChains.png)
+	![Transaction Chains](image/transactionChains.png)
 * Một vài loại giao dịch phổ biến
 Gồm 3 loại chính:
 	* Giao dịch thông dụng ( 1 input và 2 output): là thanh toán đơn giản từ địa chỉ này sang địa chỉ khác, thường bảo gồm số dư được trả lại cho chủ sở hữu ban đầu.
-	![Common Transaction](/image/form1.png)
+	![Common Transaction](image/form1.png)
 	* Giao dịch tổng hợp ( nhiều input và 1 output): là giao dịch tổng hợp một số đầu vào thành đầu ra đơn lẻ. Các giao dịch như thế thường được tạo ra bởi các ứng dụng ví để biến mất các số tiền nhỏ đã đươc nhận để thành một số tiền dùng cho các khoản thanh toán sau.
-	![Aggregating Transaction](/image/form2.png)
+	![Aggregating Transaction](image/form2.png)
 	* Giao dịch phân phối ( 1 input và nhiều output): là một hình thức giao thức thường thấy trên các sổ kế toán bitcoin là một giao dịch phân phối 1 đầu vào cho nhiều đầu ra đại diện cho các người nhận. Nó thường được sử dụng khi các tổ chức thương mại muốn phân phối tiền.
-	![Distributing Transation](/image/form3.png)
+	![Distributing Transation](image/form3.png)
 
 * Xây dựng một giao dịch.
 	* Điều kiện cần: địa chỉ đích, số tiền, số tiền còn lại trong ví.
@@ -35,11 +35,11 @@ Gồm 3 loại chính:
 			* Tính toán ra tất cả các output thuộc sở hữu của những địa chỉ trong ví mà có thể dùng được.
 			* Nếu ứng dụng ví không duy trì một bản sao thì nó có thể truy vẫn mạng bitcoin để lấy được thông tin bằng cách sử dụng nhiều API đến full-node có sãn bởi các nhà cung cấp.
 			* Việc tra cứu sẽ sử dụng 1 request API ( 1 lệnh HTTP GET tới 1 URL chỉ định), URL sẽ trả về tất cả output chưa được thanh toán cho một địa chỉ.
-			![Unspent Ouput](/image/tranction1.png)
+			![Unspent Ouput](image/tranction1.png)
 
 		* Tạo đầu ra: 
 			Đầu ra của 1 giao dịch được tạo ra dưới dạng script với một sự ràng buộc về giá trị và chỉ có thể được sử dụng nếu đưa ra một lời giải đúng cho script đó. Những ai đưa ra được key từ khóa tương đương với địa chỉ public ( nói cách khác là người sở hữu ví có địa chỉ như thế ) thì mới sử dụng được .
-			![View Transaction](/image/contructing2.png)
+			![View Transaction](image/contructing2.png)
 
 		* Thêm giao dịch vào số cái (Blockchain)
 			* Sau khi giao dịch được ví cửa người gửi tạo ra chứa tất cả mọi thứ cần thiết để xác nhận quyền sở hữu số tiền và chỉ định chủ sở hữu mới thì giao dịch sẽ được truyền tới mạng bitcoin. Nó sẽ trở thành một phần của số cái (blockchain).

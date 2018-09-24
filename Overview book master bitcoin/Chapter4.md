@@ -18,7 +18,7 @@
 	* Từ private key, dùng phép toán **elliptic curve** để sinh ra public key.
 	* Từ public key sử dung hàm băm một chiều sinh ra bitcoin address.
 	* Qui trinh là một chiều do đặc tính của phép toán.
-	!Create Key](/image/create_key.png)
+	!Create Key](image/create_key.png)
 
 * Tạo private keys:
 	* Khóa riêng là một số được chọn ngẫu nhiên. Nó sẽ được dùng để kiếm soát tất cả các tài khoản liên kết với địa chỉ bitcoin nên cần phải giữ bí mật và an toàn.
@@ -45,7 +45,7 @@
 		*public_key_hash = RIPEMD160(SHA256(public_key))*
 		*checksum = SHA256(SHA256(prefix + public_key_hash)).to_hex.slice(0, 4) # Lấy 4 byte đầu*
 		*address = Base58(prefix + public_key_hash + checksum)*
-		![Public Key to Bitcoin Address](/image/hash.png)
+		![Public Key to Bitcoin Address](image/hash.png)
 
 	* Base58 và Base58Check Encoding
 		* **Base58**: là 1 tập hợp các chữ cái ( hoa và thường) và các chữ số mà không có (0, O, i, I ).
@@ -56,7 +56,7 @@
 				* Sử dung hàm băm SHA256 2 lần ( tiền tố + dữ liệu)
 				* checksum = SHA256(SHA256(tiền tố + dữ liệu))
 				* Lấy 4 byte đầu tiên của kết quả nối vào cuối dữ liệu để kiểm tra lỗi.
-				![Base58Check Encoding](/image/base58check.pmg)
+				![Base58Check Encoding](image/base58check.pmg)
 
 ## 4. Wallets (Ví)
 
@@ -70,12 +70,12 @@ Gồm 2 loại:
 1. Ví không xác định (Non-Deterministic Wallets)
 * là bộ sưu tập các khóa bí mật được tạo ngẫu nhiên hay còn được gọi là JBOK ( Just a Bunch Of Keys).
 * Loại ví này dần được thay thế bằng ví xác định vì chúng cồng kềnh trong việc quản lý, sao lưu và thêm do cần quán lý nhiều khóa và yêu cầu phải sao lưu thường xuyên.
-![ Non-Deterministic Wallets](/image/nonDeterministic.png)
+![ Non-Deterministic Wallets](image/nonDeterministic.png)
 
 2. Ví xác định ( Deterministic (Seeded) Wallets)
 * Ví sẽ chứa các khóa riêng từ 1 seed thông qua việc sử dụng hàm băm 1 chiều tạo ra.
 * Seed ở đây là 1 số được tạo ngẫu nhiên kết hợp với các dữ liệu khác để lấy các khóa riêng.
-![ Deterministic Wallets](/image/deterministic.png)
+![ Deterministic Wallets](image/deterministic.png)
 
 3. Một số tiêu chuẩn ví (wallets): 
 * Mnemonic code words ( các từ mã nhớ), dựa trên tiêu chuẩn BIP-39
@@ -92,25 +92,25 @@ BIP0039 định nghĩa tạo mnemonic code và nguồn:
 * Thêm checksum vào cuối chuỗi của nó
 * Chia chuỗi thành các phần 11 bit, sử dụng chúng để lập chỉ mục 1 từ điển gồm 2048 từ được xác định trước
 * Đưa ra 12-24 đại diện cho mnemonic code
-![Mnemonic Code Words](/image/mnemonic.png)
+![Mnemonic Code Words](image/mnemonic.png)
 
-![Mnemonic Code Words](/image/mnemonic2.png)
+![Mnemonic Code Words](image/mnemonic2.png)
 
 5. Hierarchical Deterministic Wallets (BIP-32)
 * Ví **Deterministic** phát triển để giúp dễ dàng lấy được nhiều khóa từ 1 seed duy nhất và hình thức tiên tiến của ví **Deterministic** là ví **Hierarchical Deterministic (ví HD)**
 * Ưu điểm:
 	* Cấu trúc cây được sử dụng để thể hiện ý nghĩa tổ chức bổ sung (các nhánh thực hiện các công việc khác nhau)
 	* Tạo các khóa công khai mà ko cần truy cập vào các khóa riêng tương ứng
-![Hierarchical Deterministic Wallets](/image/hd_wallet.png)
+![Hierarchical Deterministic Wallets](image/hd_wallet.png)
 
 * HD wallet creation from a seed ( Tạo ví từ Seed)
-![HD wallet creation from a seed](/image/hd_from_seed.png)
+![HD wallet creation from a seed](image/hd_from_seed.png)
 
 * Private child key derivation ( phát sinh khóa con riêng)
-![Private child key derivation](/image/private_key_derivation.png)
+![Private child key derivation](image/private_key_derivation.png)
 
 * Public child key derivation
-![Public child key derivation](/image/public_key_derivation.png)
+![Public child key derivation](image/public_key_derivation.png)
 
 6. Khóa nâng cao và địa chỉ (Advanced Keys and Addresses)
 * Encrypted Private Keys
