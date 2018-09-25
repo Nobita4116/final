@@ -33,7 +33,7 @@
 * Giao dịch (Transaction) dùng input và output để xác định người gửi, người nhận cũng như số tiền gửi và nhận.
 ![Transaction Structure](image/structure_transaction1.png)
 
-![Transaction Structure](image/structure_transaction1.png)
+![Transaction Structure](image/structure_transaction2.png)
 
 ## 6. Transaction Outputs and Inputs
 * Output
